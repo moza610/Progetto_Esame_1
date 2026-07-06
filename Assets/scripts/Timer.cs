@@ -1,19 +1,22 @@
 using UnityEngine;
-using UnityEngine.UI; // Serve per il testo classico di Unity
+using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
 {
-   
+    // VARIABILI PUBBLICHE (Iniziale Maiuscola)
     public Text TimerText;       
     public Text GameOverText;    
     public GameObject Player;    
 
-   
-    private float timeRemaining = 300f;     private bool isGameOver = false;
+    // VARIABILI PRIVATE (Iniziale Minuscola)
+    private float timeRemaining = 300f; 
+    private bool isGameOver = false;
+    
+    // MODIFICA: Ora il gioco parte in PAUSA, il timer è fermo all'inizio!
+    private bool isPaused = true; 
 
     void Start()
     {
-      
         if (GameOverText != null)
         {
             GameOverText.gameObject.SetActive(false);
@@ -22,25 +25,17 @@ public class Timer : MonoBehaviour
 
     void Update()
     {
-        // Se il gioco non è finito, il tempo scorre
-        if (isGameOver == false)
+        if (isGameOver == false && isPaused == false)
         {
             timeRemaining = timeRemaining - Time.deltaTime;
 
-            // Se il testo esiste, calcoliamo minuti e secondi in modo super facile
             if (TimerText != null)
             {
-                // Dividiamo per 60 per trovare i minuti (es. 120 secondi / 60 = 2 minuti)
                 int minutes = (int)(timeRemaining / 60);
-                
-                // Il simbolo % trova i secondi che avanzano dalla divisione
                 int seconds = (int)(timeRemaining % 60);
-
-                // Scriviamo sul display nel formato Minuti : Secondi
-                TimerText.text =  minutes + ":" + seconds;
+                TimerText.text = "Time: " + minutes + ":" + seconds;
             }
 
-            // Se il tempo finisce, attiviamo il Game Over
             if (timeRemaining <= 0)
             {
                 TriggerGameOver();
@@ -48,27 +43,24 @@ public class Timer : MonoBehaviour
         }
     }
 
+    // Questa funzione verrà chiamata quando il giocatore esce dalla stanza
+    public void StartTimer()
+    {
+        isPaused = false;
+        Debug.Log("Il giocatore è uscito dalla stanza: TIMER PARTITO!");
+    }
+
     void TriggerGameOver()
     {
         isGameOver = true;
-        
-        // Spegniamo il timer vecchio
-        if (TimerText != null)
-        {
-            TimerText.gameObject.SetActive(false);
-        }
+        if (TimerText != null) TimerText.gameObject.SetActive(false);
 
-        // Accendiamo la scritta "Hai Perso"
         if (GameOverText != null)
         {
             GameOverText.text = "GAME OVER - HAI PERSO";
             GameOverText.gameObject.SetActive(true);
         }
 
-        // Spegniamo il giocatore per bloccarlo
-        if (Player != null)
-        {
-            Player.SetActive(false);
-        }
+        if (Player != null) Player.SetActive(false);
     }
 }
