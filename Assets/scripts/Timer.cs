@@ -3,13 +3,11 @@ using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
 {
-    // VARIABILI PUBBLICHE (Iniziale Maiuscola)
     public Text TimerText;       
     public Text GameOverText;    
     public GameObject Player;    
 
-    // VARIABILI PRIVATE (Iniziale Minuscola)
-    private float timeRemaining = 300f; 
+    public  float TimeRemaining = 300f; 
     private bool isGameOver = false;
     
     // MODIFICA: Ora il gioco parte in PAUSA, il timer è fermo all'inizio!
@@ -27,16 +25,16 @@ public class Timer : MonoBehaviour
     {
         if (isGameOver == false && isPaused == false)
         {
-            timeRemaining = timeRemaining - Time.deltaTime;
+            TimeRemaining = TimeRemaining - Time.deltaTime;
 
             if (TimerText != null)
             {
-                int minutes = (int)(timeRemaining / 60);
-                int seconds = (int)(timeRemaining % 60);
+                int minutes = (int)(TimeRemaining / 60);
+                int seconds = (int)(TimeRemaining % 60);
                 TimerText.text = "Time: " + minutes + ":" + seconds;
             }
 
-            if (timeRemaining <= 0)
+            if (TimeRemaining <= 0)
             {
                 TriggerGameOver();
             }
@@ -47,7 +45,7 @@ public class Timer : MonoBehaviour
     public void StartTimer()
     {
         isPaused = false;
-        Debug.Log("Il giocatore è uscito dalla stanza: TIMER PARTITO!");
+        Debug.Log(" TIMER PARTITO!");
     }
 
     void TriggerGameOver()
@@ -57,7 +55,7 @@ public class Timer : MonoBehaviour
 
         if (GameOverText != null)
         {
-            GameOverText.text = "GAME OVER - HAI PERSO";
+            GameOverText.text = "GAME OVER ";
             GameOverText.gameObject.SetActive(true);
         }
 

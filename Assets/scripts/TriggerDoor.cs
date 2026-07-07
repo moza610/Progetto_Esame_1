@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Door : MonoBehaviour
+public class TriggerDoor : MonoBehaviour
 {
    
     public Timer GameTimer; 
@@ -13,7 +13,7 @@ public class Door : MonoBehaviour
         {
             if (GameTimer != null)
             {
-                // Avviamo il timer!
+                // Avviamo il timer
                 GameTimer.StartTimer();
             }
         }
