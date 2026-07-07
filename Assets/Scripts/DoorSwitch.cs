@@ -4,6 +4,7 @@ public class DoorSwitch : MonoBehaviour
 {
     
     private DoorBehaviour doorBehaviour;
+    private bool isDoorLocked = true;
 
     private void Awake()
     {
@@ -32,5 +33,10 @@ public class DoorSwitch : MonoBehaviour
         {
             doorBehaviour.StartCoroutine(doorBehaviour.CloseDoorAfterDelay(5f));
         }
+    }
+
+    public void DoorUnlocked()
+    {
+        isDoorLocked = !isDoorLocked;
     }
 }
