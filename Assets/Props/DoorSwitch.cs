@@ -2,31 +2,30 @@ using UnityEngine;
 
 public class DoorSwitch : MonoBehaviour
 {
-    private Door doorBehaviour;
-    private bool isDoorOpenSwitch;
-    private bool isDoorClosedSwitch;
-    private bool isDoorLocked = true;
+    /*private DoorBehaviour doorBehaviour;
+    public bool DoorOpenSwitch = true;
+    public bool DoorClosedSwitch = false;
 
-    private void OnTriggerEnter(Collider collision)
+    private void OnMouseDown()
     {
-        if(collision.CompareTag("Player")){
-            if (!isDoorLocked)
-            {
-                if(isDoorOpenSwitch && !doorBehaviour.isDoorOpen)
-                {   
-                    doorBehaviour.isDoorOpen =! doorBehaviour.isDoorOpen;
-                    
-                }
-                else if(isDoorClosedSwitch && doorBehaviour.isDoorOpen)
-                {
-                    doorBehaviour.isDoorOpen = !doorBehaviour.isDoorOpen;
-                }
-            }
+        if (DoorOpenSwitch && !doorBehaviour.IsDoorOpen)
+        {
+            doorBehaviour.IsDoorOpen = true;
         }
+        else if (DoorClosedSwitch && doorBehaviour.IsDoorOpen)
+        {
+            doorBehaviour.IsDoorOpen = false;
+        }
+    }*/
+    private DoorBehaviour doorBehaviour;
+
+    private void Awake()
+    {
+        doorBehaviour = GetComponent<DoorBehaviour>();
     }
 
-    public void DoorLockedStatus()
+    private void OnMouseDown()
     {
-        isDoorLocked = !isDoorLocked;
+        doorBehaviour.IsDoorOpen = !doorBehaviour.IsDoorOpen;
     }
 }
