@@ -1,76 +1,92 @@
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class PuzzleDoorCode : MonoBehaviour
 {
     public string CorrectCode = "124569";
-    public GameObject PswScreen;
+    private Renderer rend;
     public TMP_InputField UIPswDoor;
     private bool isKeyboardActive = false;
+    public Material ScreenGreen;
+    public Material ScreenRed;
+    
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-      //all'inizio deve essere spento
-      if (PswScreen != null)
-        {
-            PswScreen.SetActive(false);
-        } 
+      rend = GetComponent<Renderer>(); // Prende il renderer di QUESTO oggetto
+
+      if (UIPswDoor != null)
+    {
+        UIPswDoor.gameObject.SetActive(false);
+    }
     }
 
     //attiviamo il tastierino per inserire la password
         public void ActiveKeyboard()
-        {
-        PswScreen.SetActive(true);//canvas attivo
-
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
-
+    {
+        Debug.Log("Il comando è arrivato! Sto aprendo la tastiera."); // Aggiungi questa riga
+         if (UIPswDoor != null)
+    {
+        UIPswDoor.gameObject.SetActive(true);
+    }
         UIPswDoor.text = ""; // Pulisce il testo precedente
+
+        UIPswDoor.Select();
         UIPswDoor.ActivateInputField();
 
         isKeyboardActive = true; // Impostiamo a vero quando si apre
-        PswScreen.SetActive(true);
-        Cursor.lockState = CursorLockMode.None;
-        UIPswDoor.text = "";
-        UIPswDoor.ActivateInputField();
      
     }
 
     //controlla se la psw è corretta
-    public void CheckPassword(string userInput)
+    public void CheckPassword(string Input)
     {
-      if (userInput == CorrectCode)
+        if (Input.Trim() == CorrectCode)
         {
-            Debug.Log("Password Corretta");
+            Debug.Log("Password CORRETTA");
+            if (rend != null) 
+            {
+                // Cambia il materiale del modello 3D
+                rend.material = ScreenGreen;
+            }
         }
         else
         {
-            Debug.Log("Password Sbagliata");
-            UIPswDoor.text = "";
-            UIPswDoor.ActivateInputField(); //riporta il cursore nella casella
+            Debug.Log("Password SBAGLIATA");
+            if (rend != null) 
+            {
+                rend.material = ScreenRed;
+                UIPswDoor.text = "";
+                UIPswDoor.ActivateInputField();
+            }
         }
     }
 
     void CloseKeyboard() 
     {
-      PswScreen.SetActive(false);
-      Cursor.lockState = CursorLockMode.Locked;
-
       isKeyboardActive = false; // Impostiamo a falso quando si chiude
-      PswScreen.SetActive(false);
-      Cursor.lockState = CursorLockMode.Locked; // Blocca il mouse
-       
+      Cursor.lockState = CursorLockMode.Locked; // Blocca il mouse 
     }
     
     // Update is called once per frame
     void Update()
     {
-     // Se il tastierino è attivo e premi ESC, allora chiudi
-        if (isKeyboardActive && Input.GetKeyDown(KeyCode.Escape))
+     // premi ESC, allora chiudi
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            CloseKeyboard();
+            UIPswDoor.gameObject.SetActive(false);
+            
         }   
+    //quando premi invio si verifica la password
+        if (isKeyboardActive && Input.GetKeyDown(KeyCode.Return))
+    {
+        CheckPassword(UIPswDoor.text);
+    }
+    
+  
+    
     }
 }
