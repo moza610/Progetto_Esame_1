@@ -7,6 +7,8 @@ public class Door : MonoBehaviour {
 	public float easeTime;
 	public OTween.EaseType ease;
 	public float waitTime;
+
+	private bool isDoorOpen {get; private set;}
 	
 	private Vector3 StartlocalPos;
 	private Vector3 endlocalPos;
@@ -17,6 +19,7 @@ public class Door : MonoBehaviour {
 	}
 		
 	public void OpenDoor(){
+		if(isDoorOpen) return;
 		OTween.ValueTo( gameObject,ease,0.0f,-translateValue,easeTime,0.0f,"StartOpen","UpdateOpenDoor","EndOpen");
 		GetComponent<AudioSource>().Play();
 	}
