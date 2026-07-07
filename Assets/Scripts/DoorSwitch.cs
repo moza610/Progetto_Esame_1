@@ -15,12 +15,19 @@ public class DoorSwitch : MonoBehaviour
         doorBehaviour.IsDoorOpen = !doorBehaviour.IsDoorOpen;
     }*/
 
-    private void Update()
+    private void OnMouseDown()
     {
-        if (Input.GetMouseButtonDown(0))
+        /*if (Input.GetMouseButtonDown(0))
         {
             doorBehaviour.IsDoorOpen = !doorBehaviour.IsDoorOpen;
         }
+        if (doorBehaviour.IsDoorOpen)
+        {
+            doorBehaviour.StartCoroutine(doorBehaviour.CloseDoorAfterDelay(5f));
+        }*/
+
+        doorBehaviour.IsDoorOpen = !doorBehaviour.IsDoorOpen;
+        
         if (doorBehaviour.IsDoorOpen)
         {
             doorBehaviour.StartCoroutine(doorBehaviour.CloseDoorAfterDelay(5f));
