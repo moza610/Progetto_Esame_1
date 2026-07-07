@@ -1,26 +1,51 @@
-using UnityEditor;
 using UnityEngine;
 
 public class ClickableScreen : MonoBehaviour
 {
+    // Questi sono i materiali originali della tua amica
     public Material ScreenRed;
     public Material ScreenGreen;
+
+    // LE TUE AGGIUNTE: Spazi per l'audio e l'immagine
+    public AudioSource ClickAudio;      
+    public GameObject ImmagineSchermo;  
 
     private Renderer rend;
     private bool isOn = false;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-      rend = GetComponent<Renderer>();
-      rend.material = ScreenRed; 
+        rend = GetComponent<Renderer>();
+        if (ScreenRed != null && rend != null)
+        {
+            rend.material = ScreenRed; 
+        }
+
+        // All'inizio spegniamo la tua immagine
+        if (ImmagineSchermo != null)
+        {
+            ImmagineSchermo.SetActive(false);
+        }
     }
 
     public void ToggleColor()
     {
-      isOn = !isOn;
-      
-      if (isOn == true)
+        isOn = !isOn;
+        
+        // Quando clicchi, fa partire il tuo audio
+        if (ClickAudio != null)
+        {
+            ClickAudio.Play();
+        }
+
+        // Quando clicchi, accende/spegne la tua immagine
+        if (ImmagineSchermo != null)
+        {
+            ImmagineSchermo.SetActive(isOn);
+        }
+        
+        // Questo è il cambio colore originale della tua amica
+        if (isOn == true)
         {
             rend.material = ScreenGreen;
         }
@@ -28,13 +53,5 @@ public class ClickableScreen : MonoBehaviour
         {
             rend.material = ScreenRed;
         }
-
     } 
-
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
