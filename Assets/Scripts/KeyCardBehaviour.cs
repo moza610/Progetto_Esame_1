@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class KeyCardBehaviour : MonoBehaviour
 {
-
     [SerializeField] DoorSwitch correspondingDoor;
     private void OnTriggerEnter(Collider collision)
     {
@@ -14,3 +13,4 @@ public class KeyCardBehaviour : MonoBehaviour
         }
     }
 }
+
