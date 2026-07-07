@@ -2,21 +2,7 @@ using UnityEngine;
 
 public class DoorSwitch : MonoBehaviour
 {
-    /*private DoorBehaviour doorBehaviour;
-    public bool DoorOpenSwitch = true;
-    public bool DoorClosedSwitch = false;
-
-    private void OnMouseDown()
-    {
-        if (DoorOpenSwitch && !doorBehaviour.IsDoorOpen)
-        {
-            doorBehaviour.IsDoorOpen = true;
-        }
-        else if (DoorClosedSwitch && doorBehaviour.IsDoorOpen)
-        {
-            doorBehaviour.IsDoorOpen = false;
-        }
-    }*/
+    
     private DoorBehaviour doorBehaviour;
 
     private void Awake()
@@ -24,8 +10,21 @@ public class DoorSwitch : MonoBehaviour
         doorBehaviour = GetComponent<DoorBehaviour>();
     }
 
-    private void OnMouseDown()
+    /*private void OnMouseDown()
     {
         doorBehaviour.IsDoorOpen = !doorBehaviour.IsDoorOpen;
+    }*/
+
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            doorBehaviour.IsDoorOpen = !doorBehaviour.IsDoorOpen;
+        }
+
+        if (doorBehaviour.IsDoorOpen)
+        {
+            doorBehaviour.StartCoroutine(doorBehaviour.CloseDoorAfterDelay(5f));
+        }
     }
 }

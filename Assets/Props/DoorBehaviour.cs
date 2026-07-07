@@ -6,10 +6,11 @@ public class DoorBehaviour : MonoBehaviour
     public bool IsDoorOpen = false;
     Vector3 doorOpenPosition;
     Vector3 doorClosedPosition;
-    float doorSpeed = 10f;
+    float doorSpeed = 3f;
 
     void Awake()
     {
+
         doorClosedPosition = transform.position;
         doorOpenPosition = new Vector3(transform.position.x, transform.position.y + 3f, 
         transform.position.z);
@@ -45,7 +46,7 @@ public class DoorBehaviour : MonoBehaviour
         }
     }
 
-    IEnumerator CloseDoorAfterDelay(float delay)
+    public IEnumerator CloseDoorAfterDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
         IsDoorOpen = false;
