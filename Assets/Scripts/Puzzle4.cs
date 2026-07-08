@@ -2,50 +2,49 @@ using UnityEngine;
 
 public class Puzzle4 : MonoBehaviour
 {
-    private bool activatedObj = true;
-    Vector3 startingPos;
-    Vector3 activatedPos;
-    float speedObj = 2f;
+    public static Puzzle4 Instance { get; private set; }
+
+    private bool puzzleSolved = false;
+
+    public Puzzle4_UpAndDown[] UpAndDown = new Puzzle4_UpAndDown[3];
+    public bool[] CorrectPos = new bool[3];
+
+    public Puzzle4_MaterialShift[] MaterialShift = new Puzzle4_MaterialShift[3];
+
+    public DoorSwitch correspondingDoor;
 
     void Awake()
     {
-        startingPos = transform.position;
-        activatedPos = new Vector3(transform.position.x,
-        transform.position.y + 1f, transform.position.z);
+        Instance = this;
     }
 
-    void Activated()
+    public void puzzleSolution()
     {
-        if(transform.position != activatedPos)
-        {
-            transform.position = Vector3.MoveTowards(transform.position,
-            activatedPos, speedObj * Time.deltaTime);
-        }
-    }
+        if (puzzleSolved) return;
 
-    void Deactivated()
-    {
-        if(transform.position != startingPos)
+        for (int i = 0; i < UpAndDown.Length; i++)
         {
-            transform.position = Vector3.MoveTowards(transform.position,
-            startingPos, speedObj * Time.deltaTime);
+            if (UpAndDown[i].ActivatedObj != CorrectPos[i])
+            {
+                return;
+            }
         }
-    }
 
-    private void OnMouseDown()
-    {
-        activatedObj = !activatedObj;
-    }
+        foreach (Puzzle4_MaterialShift objMaterial in MaterialShift)
+        {
+            if (!objMaterial.Correct)
+            {
+                return;
+            }
+        }
 
-    void Update()
-    {
-        if (activatedObj)
+        puzzleSolved = true;
+
+        if (correspondingDoor != null)
         {
-            Activated();
+            correspondingDoor.DoorUnlocked();
         }
-        else
-        {
-            Deactivated();
-        }
+
+        Debug.Log("Puzzle risolto!");
     }
 }

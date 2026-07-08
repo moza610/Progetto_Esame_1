@@ -4550,7 +4550,7 @@ Transform:
   m_GameObject: {fileID: 227610949}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 35.5, y: 1.38, z: 32.9}
+  m_LocalPosition: {x: 35.5, y: 1.01, z: 32.9}
   m_LocalScale: {x: 0.62196565, y: 0.62196565, z: 0.62196565}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9601,6 +9601,7 @@ GameObject:
   - component: {fileID: 432659171}
   - component: {fileID: 432659170}
   - component: {fileID: 432659169}
+  - component: {fileID: 432659173}
   m_Layer: 0
   m_Name: Cube (1)
   m_TagString: Untagged
@@ -9691,12 +9692,24 @@ Transform:
   m_GameObject: {fileID: 432659168}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 32.5, y: 1.38, z: 37.628}
+  m_LocalPosition: {x: 32.5, y: 1.01, z: 37.628}
   m_LocalScale: {x: 0.62196565, y: 0.62196565, z: 0.62196565}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &432659173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 432659168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb8cafc8ddd1c5043aeb77751d8cb384, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &441928639
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10635,6 +10648,7 @@ GameObject:
   - component: {fileID: 483916553}
   - component: {fileID: 483916552}
   - component: {fileID: 483916551}
+  - component: {fileID: 483916555}
   m_Layer: 0
   m_Name: Cube (2)
   m_TagString: Untagged
@@ -10725,12 +10739,24 @@ Transform:
   m_GameObject: {fileID: 483916550}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 32.5, y: 1.38, z: 32.9}
+  m_LocalPosition: {x: 32.5, y: 1.01, z: 32.9}
   m_LocalScale: {x: 0.62196565, y: 0.62196565, z: 0.62196565}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &483916555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 483916550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb8cafc8ddd1c5043aeb77751d8cb384, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &486887493
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14788,7 +14814,7 @@ Transform:
   m_GameObject: {fileID: 651096620}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 35.5, y: 1.38, z: 37.628}
+  m_LocalPosition: {x: 35.5, y: 1.01, z: 37.628}
   m_LocalScale: {x: 0.62196565, y: 0.62196565, z: 0.62196565}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -32209,6 +32235,7 @@ GameObject:
   - component: {fileID: 1221006442}
   - component: {fileID: 1221006441}
   - component: {fileID: 1221006440}
+  - component: {fileID: 1221006444}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -32299,12 +32326,24 @@ Transform:
   m_GameObject: {fileID: 1221006439}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 32.5, y: 1.38, z: 35.3}
+  m_LocalPosition: {x: 32.5, y: 1.01, z: 35.3}
   m_LocalScale: {x: 0.62196565, y: 0.62196565, z: 0.62196565}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1221006444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1221006439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb8cafc8ddd1c5043aeb77751d8cb384, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!43 &1224364906
 Mesh:
   m_ObjectHideFlags: 0
@@ -34886,7 +34925,7 @@ Transform:
   m_GameObject: {fileID: 1300914371}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 35.5, y: 1.38, z: 35.3}
+  m_LocalPosition: {x: 35.5, y: 1.01, z: 35.3}
   m_LocalScale: {x: 0.62196565, y: 0.62196565, z: 0.62196565}
   m_ConstrainProportionsScale: 0
   m_Children: []
