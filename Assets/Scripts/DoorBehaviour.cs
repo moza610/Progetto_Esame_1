@@ -31,8 +31,8 @@ public class DoorBehaviour : MonoBehaviour
     {
         if (transform.position != doorOpenPosition)
         {
-            transform.position = Vector3.MoveTowards(transform.position, doorOpenPosition, 
-            doorSpeed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position,
+            doorOpenPosition, doorSpeed * Time.deltaTime);
         }
     }
 
@@ -40,8 +40,8 @@ public class DoorBehaviour : MonoBehaviour
     {
         if (transform.position != doorClosedPosition)
         {
-            transform.position = Vector3.MoveTowards(transform.position, doorClosedPosition, 
-            doorSpeed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position,
+            doorClosedPosition, doorSpeed * Time.deltaTime);
         }
     }
 
