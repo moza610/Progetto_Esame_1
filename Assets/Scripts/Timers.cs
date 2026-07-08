@@ -3,16 +3,19 @@ using UnityEngine.UI;
 
 public class Timers : MonoBehaviour
 {
-   
-    public Text TimerText;       
-    public Text GameOverText;    
-    public GameObject Player;    
+    // Elementi dell'interfaccia e player
+    public Text TimerText;
+    public Text GameOverText;
+    public GameObject Player;
 
-    private float timeRemaining = 300f; 
-    private bool isGameOver = false; 
-    private bool isPaused = false; 
+    // Variabili che gestiscono il tempo e lo stato del gioco
+    private float timeRemaining = 300f;
+    private bool isGameOver = false;
+    private bool isPaused = false;
+
     void Start()
     {
+        // Nasconde il testo del Game Over e mostra il tempo iniziale
         if (GameOverText != null)
         {
             GameOverText.gameObject.SetActive(false);
@@ -28,6 +31,7 @@ public class Timers : MonoBehaviour
 
     void Update()
     {
+        // Aggiorna il timer finché il gioco non è terminato e il timer non è in pausa
         if (isGameOver == false && isPaused == false)
         {
             timeRemaining = timeRemaining - Time.deltaTime;
@@ -36,7 +40,7 @@ public class Timers : MonoBehaviour
             {
                 int minutes = (int)(timeRemaining / 60);
                 int seconds = (int)(timeRemaining % 60);
-                
+
                 if (timeRemaining < 0)
                 {
                     minutes = 0;
@@ -46,6 +50,7 @@ public class Timers : MonoBehaviour
                 TimerText.text = minutes + ":" + seconds;
             }
 
+            // Quando il tempo finisce viene avviato il Game Over
             if (timeRemaining <= 0)
             {
                 TriggerGameOver();
@@ -53,24 +58,25 @@ public class Timers : MonoBehaviour
         }
     }
 
-    // Funzione per la porta
+    // Mette in pausa il timer
     public void PauseTimer()
     {
         isPaused = true;
         Debug.Log("Timer FERMATO!");
     }
 
-    // Funzione per la porta
+    // Fa ripartire il timer
     public void ResumeTimer()
     {
         isPaused = false;
         Debug.Log("Timer RIPARTITO!");
     }
 
+    // Gestisce tutto ciò che succede alla fine della partita
     void TriggerGameOver()
     {
         isGameOver = true;
-        
+
         if (TimerText != null) TimerText.gameObject.SetActive(false);
 
         if (GameOverText != null)
@@ -79,7 +85,7 @@ public class Timers : MonoBehaviour
             GameOverText.gameObject.SetActive(true);
         }
 
-        if (Player != null) 
+        if (Player != null)
         {
             Player.SetActive(false);
         }
