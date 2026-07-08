@@ -14392,6 +14392,8 @@ MonoBehaviour:
   - {fileID: 1300914376}
   - {fileID: 227610954}
   correspondingDoor: {fileID: 57014626}
+  audioSource: {fileID: 891630147}
+  solvedClip: {fileID: 8300000, guid: f878f5266dc6ba64f963840101e4cb18, type: 3}
 --- !u!4 &646184473
 Transform:
   m_ObjectHideFlags: 0
@@ -14499,7 +14501,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 4abeeeded147e894fb2464e91f387e03, type: 2}
   - {fileID: 2100000, guid: 24b54ffaee3297540ba79f24163d0dad, type: 2}
   - {fileID: 2100000, guid: e4d8d49d8e4644f4a8e96a7e407804cb, type: 2}
-  correctMaterialIndex: 3
+  correctMaterialIndex: 0
 --- !u!1001 &658971993
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23090,6 +23092,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 532beeb9bb3ca403c8faa1a21d1b0dc1, type: 3}
+--- !u!82 &891630147 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 8200000, guid: 4077a99799ce54cdf9cfb8869fb20c22, type: 3}
+  m_PrefabInstance: {fileID: 57014619}
+  m_PrefabAsset: {fileID: 0}
 --- !u!43 &892686112
 Mesh:
   m_ObjectHideFlags: 0
@@ -34423,7 +34430,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 4abeeeded147e894fb2464e91f387e03, type: 2}
   - {fileID: 2100000, guid: 24b54ffaee3297540ba79f24163d0dad, type: 2}
   - {fileID: 2100000, guid: e4d8d49d8e4644f4a8e96a7e407804cb, type: 2}
-  correctMaterialIndex: 1
+  correctMaterialIndex: 3
 --- !u!1 &1302397792
 GameObject:
   m_ObjectHideFlags: 0
@@ -58440,9 +58447,9 @@ SceneRoots:
   - {fileID: 926528354}
   - {fileID: 795656338}
   - {fileID: 8718899481041547441}
-  - {fileID: 6199249548563333208}
   - {fileID: 1865069011932364205}
-  - {fileID: 691594328155885089}
+  - {fileID: 6199249548563333208}
   - {fileID: 3159981446711411630}
+  - {fileID: 691594328155885089}
   - {fileID: 8036074133182875330}
   - {fileID: 646184473}

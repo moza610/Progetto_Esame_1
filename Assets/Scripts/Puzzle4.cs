@@ -13,6 +13,9 @@ public class Puzzle4 : MonoBehaviour
 
     public DoorSwitch correspondingDoor;
 
+    public AudioSource audioSource;
+    public AudioClip solvedClip;
+
     void Awake()
     {
         Instance = this;
@@ -43,6 +46,11 @@ public class Puzzle4 : MonoBehaviour
         if (correspondingDoor != null)
         {
             correspondingDoor.DoorUnlocked();
+        }
+
+        if (audioSource != null && solvedClip != null)
+        {
+            audioSource.PlayOneShot(solvedClip);
         }
 
         Debug.Log("Puzzle risolto!");
