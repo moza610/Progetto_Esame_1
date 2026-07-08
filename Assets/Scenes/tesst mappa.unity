@@ -846,7 +846,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 156532388}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
         m_MethodName: Play
         m_Mode: 1
@@ -903,16 +903,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 57478513}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 29.23}
-  m_LocalScale: {x: -0.010810884, y: 0.010478493, z: 0.011358477}
+  m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: -41.17978}
+  m_LocalScale: {x: -0.0074067437, y: 0.007179017, z: 0.0077819102}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 675449234}
+  m_Father: {fileID: 2137783218}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -14.606, y: -11.348}
+  m_AnchoredPosition: {x: 6.145528, y: -8.199507}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &58579739
@@ -5513,7 +5513,7 @@ RectTransform:
   m_LocalScale: {x: -0.016776666, y: 0.010014807, z: 0.011358477}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1041081058}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -10119,7 +10119,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 581537742}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &694750537
 AudioSource:
@@ -13456,10 +13456,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f95e62978d7323d43967488f85712d4c, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 885623673}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f95e62978d7323d43967488f85712d4c, type: 3}
 --- !u!4 &885623671 stripped
 Transform:
@@ -14206,8 +14203,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: -19.993835}
   m_LocalScale: {x: 0.6851193, y: 0.6851193, z: 0.6851193}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1501596566}
+  m_Children: []
   m_Father: {fileID: 1196427368}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -14259,7 +14255,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1501596565}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -16280,6 +16276,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ScreenRed: {fileID: 2100000, guid: c530e6e286bf9434ebf90d60b6bf986d, type: 2}
   ScreenGreen: {fileID: 2100000, guid: 86b49d4737f61a846aa9587ad27bc688, type: 2}
+  ClickAudio: {fileID: 0}
+  ImmagineSchermo: {fileID: 0}
 --- !u!1001 &1094043695
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16476,6 +16474,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ScreenRed: {fileID: 2100000, guid: c530e6e286bf9434ebf90d60b6bf986d, type: 2}
   ScreenGreen: {fileID: 2100000, guid: 86b49d4737f61a846aa9587ad27bc688, type: 2}
+  ClickAudio: {fileID: 0}
+  ImmagineSchermo: {fileID: 0}
 --- !u!1 &1102565305 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: e1f286e4bcffe4c8b811065adefa709f, type: 3}
@@ -17355,10 +17355,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f95e62978d7323d43967488f85712d4c, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1152474396}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f95e62978d7323d43967488f85712d4c, type: 3}
 --- !u!4 &1152474394 stripped
 Transform:
@@ -20427,7 +20424,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95afdb0de86a62c46925b60a75c3c7ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TimerText: {fileID: 613338267}
+  TimerText: {fileID: 0}
   GameOverText: {fileID: 1037293497}
   Player: {fileID: 970701137}
 --- !u!1001 &1274233665
@@ -20795,6 +20792,7 @@ Transform:
   - {fileID: 885623671}
   - {fileID: 1152474394}
   - {fileID: 1993186081}
+  - {fileID: 1275958580}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1293482813
@@ -23376,7 +23374,7 @@ RectTransform:
   m_LocalScale: {x: -0.017618928, y: 0.0090472335, z: 0.011358477}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 87390211}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -23698,10 +23696,7 @@ PrefabInstance:
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 455770, guid: 814f2f52d8dd87948a0fba9364aa412b, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1041081058}
-    - targetCorrespondingSourceObject: {fileID: 455770, guid: 814f2f52d8dd87948a0fba9364aa412b, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 37730993}
+      addedObject: {fileID: 57478517}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 151532, guid: 814f2f52d8dd87948a0fba9364aa412b, type: 3}
       insertIndex: -1
@@ -25409,6 +25404,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ScreenRed: {fileID: 2100000, guid: c530e6e286bf9434ebf90d60b6bf986d, type: 2}
   ScreenGreen: {fileID: 2100000, guid: 86b49d4737f61a846aa9587ad27bc688, type: 2}
+  ClickAudio: {fileID: 0}
+  ImmagineSchermo: {fileID: 0}
 --- !u!1001 &1697511180
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25602,6 +25599,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ScreenRed: {fileID: 2100000, guid: c530e6e286bf9434ebf90d60b6bf986d, type: 2}
   ScreenGreen: {fileID: 2100000, guid: 86b49d4737f61a846aa9587ad27bc688, type: 2}
+  ClickAudio: {fileID: 0}
+  ImmagineSchermo: {fileID: 0}
 --- !u!1 &1704257027 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: b674bc278db9a43ad8286f764de36c30, type: 3}
@@ -30613,17 +30612,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 455770, guid: 814f2f52d8dd87948a0fba9364aa412b, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 675449234}
-    - targetCorrespondingSourceObject: {fileID: 455770, guid: 814f2f52d8dd87948a0fba9364aa412b, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 156532389}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 151532, guid: 814f2f52d8dd87948a0fba9364aa412b, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1752686910}
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 814f2f52d8dd87948a0fba9364aa412b, type: 3}
 --- !u!1001 &2076961118
 PrefabInstance:
@@ -32476,3 +32466,9 @@ SceneRoots:
   - {fileID: 669632146}
   - {fileID: 1793172568}
   - {fileID: 1238045765}
+  - {fileID: 2067485185}
+  - {fileID: 344356791}
+  - {fileID: 694750536}
+  - {fileID: 1232935241}
+  - {fileID: 1459406611}
+  - {fileID: 1475842242}
