@@ -11,6 +11,7 @@ public class PuzzleDoorCode : MonoBehaviour
     private bool isKeyboardActive = false;
     public Material ScreenGreen;
     public Material ScreenRed;
+    public DoorBehaviour doorScript;//per inserire la porta da far aprire
     
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -27,7 +28,7 @@ public class PuzzleDoorCode : MonoBehaviour
     //attiviamo il tastierino per inserire la password
         public void ActiveKeyboard()
     {
-        Debug.Log("Il comando è arrivato! Sto aprendo la tastiera."); // Aggiungi questa riga
+        Debug.Log("Il comando è arrivato! Sto aprendo la tastiera."); 
          if (UIPswDoor != null)
     {
         UIPswDoor.gameObject.SetActive(true);
@@ -52,6 +53,11 @@ public class PuzzleDoorCode : MonoBehaviour
                 // Cambia il materiale del modello 3D
                 rend.material = ScreenGreen;
             }
+
+            if (doorScript != null)
+            {
+                doorScript.IsDoorOpen = true; // Attiva l'apertura
+            }
         }
         else
         {
@@ -63,6 +69,8 @@ public class PuzzleDoorCode : MonoBehaviour
                 UIPswDoor.ActivateInputField();
             }
         }
+        
+        UIPswDoor.gameObject.SetActive(false);
     }
 
     void CloseKeyboard() 
