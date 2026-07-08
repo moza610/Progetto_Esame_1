@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class MouseClicker : MonoBehaviour
 {
-   
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -13,18 +12,17 @@ public class MouseClicker : MonoBehaviour
     void Update()
     {
         //Mousebotton attiva un raggio invisibile dal puntatore al centro dello schermo che colpisce gli oggetti
-     if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0))
         {
-          Ray ray = Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0));
-            RaycastHit hit;  
+            Ray ray = Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0));
+            RaycastHit hit;
 
-          
-           
             if (Physics.Raycast(ray, out hit))  //Funzionamento schermi per il Puzzle 1
             {
-                ClickableScreen screen = hit.collider.GetComponent<ClickableScreen>();
+                Debug.Log("Raycast ha colpito: " + hit.collider.gameObject.name);
 
-                 if (screen != null)
+                ClickableScreen screen = hit.collider.GetComponent<ClickableScreen>();
+                if (screen != null)
                 {
                     screen.ToggleColor();
                 }
@@ -35,11 +33,13 @@ public class MouseClicker : MonoBehaviour
                     puzzle.ActiveKeyboard();
                 }
 
+                // Gestione schermo con meme + audio
+                ScreenMediaController mediaScreen = hit.collider.GetComponent<ScreenMediaController>();
+                if (mediaScreen != null)
+                {
+                    mediaScreen.ToggleMedia();
+                }
             }
-            
-           
         }
-
-    
     }
 }

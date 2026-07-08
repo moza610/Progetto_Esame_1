@@ -2,13 +2,10 @@ using UnityEngine;
 
 public class ClickableScreen : MonoBehaviour
 {
-    // Questi sono i materiali originali della tua amica
+    
     public Material ScreenRed;
     public Material ScreenGreen;
-
-    // LE TUE AGGIUNTE: Spazi per l'audio e l'immagine
-    public AudioSource ClickAudio;      
-    public GameObject ImmagineSchermo;  
+ 
 
     private Renderer rend;
     private bool isOn = false;
@@ -21,30 +18,13 @@ public class ClickableScreen : MonoBehaviour
             rend.material = ScreenRed; 
         }
 
-        // All'inizio spegniamo la tua immagine
-        if (ImmagineSchermo != null)
-        {
-            ImmagineSchermo.SetActive(false);
-        }
     }
 
     public void ToggleColor()
     {
         isOn = !isOn;
-        
-        // Quando clicchi, fa partire il tuo audio
-        if (ClickAudio != null)
-        {
-            ClickAudio.Play();
-        }
-
-        // Quando clicchi, accende/spegne la tua immagine
-        if (ImmagineSchermo != null)
-        {
-            ImmagineSchermo.SetActive(isOn);
-        }
-        
-        // Questo è il cambio colore originale della tua amica
+          
+   
         if (isOn == true)
         {
             rend.material = ScreenGreen;
