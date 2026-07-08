@@ -6,7 +6,7 @@ public class Puzzle4_MaterialShift : MonoBehaviour
     public int correctMaterialIndex = 0;
 
     int currentInd = 0;
-    Renderer renderer;
+    Renderer objrenderer;
 
     public bool Correct
     {
@@ -15,14 +15,14 @@ public class Puzzle4_MaterialShift : MonoBehaviour
 
     private void Start()
     {
-        renderer = GetComponent<Renderer>();
-        renderer.material = Skins[currentInd];
+        objrenderer = GetComponent<Renderer>();
+        objrenderer.material = Skins[currentInd];
     }
 
     private void OnMouseDown()
     {
         currentInd = (currentInd + 1) % Skins.Length;
-        renderer.material = Skins[currentInd];
+        objrenderer.material = Skins[currentInd];
         Puzzle4.Instance.puzzleSolution();
     }
 }

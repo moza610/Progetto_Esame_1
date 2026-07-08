@@ -6,7 +6,7 @@ public class Puzzle4 : MonoBehaviour
 
     private bool puzzleSolved = false;
 
-    public Puzzle4_UpAndDown[] UpAndDown = new Puzzle4_UpAndDown[3];
+    public Puzzle4_UpAndDown[] upAndDown = new Puzzle4_UpAndDown[3];
     public bool[] CorrectPos = new bool[3];
 
     public Puzzle4_MaterialShift[] MaterialShift = new Puzzle4_MaterialShift[3];
@@ -22,9 +22,9 @@ public class Puzzle4 : MonoBehaviour
     {
         if (puzzleSolved) return;
 
-        for (int i = 0; i < UpAndDown.Length; i++)
+        for (int i = 0; i < upAndDown.Length; i++)
         {
-            if (UpAndDown[i].ActivatedObj != CorrectPos[i])
+            if (upAndDown[i].ActivatedObj != CorrectPos[i])
             {
                 return;
             }
