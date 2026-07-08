@@ -10,6 +10,7 @@ TagManager:
   - KCRed
   - KCYellow
   - KCGreen
+  - FreeDoor
   layers:
   - Default
   - TransparentFX
