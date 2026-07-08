@@ -21,6 +21,8 @@ public class DoorSwitch : MonoBehaviour
 
     private void OnMouseDown()
     {
+        if (isDoorLocked) return;
+        
         doorBehaviour.IsDoorOpen = !doorBehaviour.IsDoorOpen;
         
         if (doorBehaviour.IsDoorOpen)
