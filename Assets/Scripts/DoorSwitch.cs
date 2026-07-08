@@ -5,14 +5,15 @@ public class DoorSwitch : MonoBehaviour
     
     private DoorBehaviour doorBehaviour;
     private bool isDoorLocked = true;
-    private bool needsKey = true;
+    private bool keyNeeded = true;
 
     private void Awake()
     {
         doorBehaviour = GetComponent<DoorBehaviour>();
-        needsKey = !CompareTag("noKeyDoor");
 
-        if (!needsKey)
+        keyNeeded = !CompareTag("FreeDoor");
+
+        if (!keyNeeded)
         {
             isDoorLocked = false;
         }
@@ -20,10 +21,7 @@ public class DoorSwitch : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (!isDoorLocked)
-        {
-            doorBehaviour.IsDoorOpen = !doorBehaviour.IsDoorOpen;
-        }
+        doorBehaviour.IsDoorOpen = !doorBehaviour.IsDoorOpen;
         
         if (doorBehaviour.IsDoorOpen)
         {
