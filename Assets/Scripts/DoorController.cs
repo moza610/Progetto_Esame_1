@@ -2,8 +2,7 @@ using UnityEngine;
 
 public class DoorController : MonoBehaviour
 {
-     public bool[] screenStates = new bool[4]; //facciamo aprire la porta quando il prim puzzle è completo e corretto
-
+    public bool[] ScreenStates = new bool[4]; //facciamo aprire la porta quando il prim puzzle è completo e corretto
     private bool[] targetCombination = { false, false, true, false };
     public DoorBehaviour doorScript;
    
@@ -13,22 +12,26 @@ public class DoorController : MonoBehaviour
         
     }
 
-       public void CheckDoor()
+    public void CheckDoor()
     {
-        bool isCorrect = true;
-        for (int i = 0; i < 4; i++) //controlliamo se gli schermi sono nell'ordine giusto, uno alla volta
+        // 1. Controllo: se la combinazione non è corretta, esci subito (Return)
+        for (int i = 0; i < 4; i++)
         {
-            if (screenStates[i] != targetCombination[i])
-                isCorrect = false;
-        }  
+            if (ScreenStates[i] != targetCombination[i])
+            {
+                return; // Se ne trova uno sbagliato, si ferma qui e non fa nulla
+            }
+        } 
 
-        // Se la combinazione è corretta, apri la porta!
-        if (isCorrect)
+        
+        if (doorScript != null)
         {
-            doorScript.IsDoorOpen = true; // Questo fa partire l'animazione della porta
-            
-        }
+            doorScript.IsDoorOpen = true;
+            Debug.Log("Combinazione corretta: Porta aperta!");
+        }  
     }
+    
+     
 
     // Update is called once per frame
     void Update()

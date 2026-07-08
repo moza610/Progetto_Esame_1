@@ -13,8 +13,8 @@ public class ClickableScreen : MonoBehaviour
     private bool isOn = false;
     
 
-    public DoorController puzzleManager; // per far aprire la porta con il puzze risolto
-    public int screenIndex;     // sequenza per puzzle1
+    public DoorController puzzleManager; // per far aprire la porta con il puzzLe risolto
+    public int ScreenIndex;     // sequenza per puzzle1
     void Start()
     {
         rend = GetComponent<Renderer>();
@@ -55,12 +55,12 @@ public class ClickableScreen : MonoBehaviour
         {
             rend.material = ScreenRed;
         }
-        
+       
         
         if (puzzleManager != null)
         {
             // Aggiorna lo stato nel manager
-            puzzleManager.screenStates[screenIndex] = isOn;
+            puzzleManager.ScreenStates[ScreenIndex] = isOn;
             puzzleManager.CheckDoor();
         }
     } 
