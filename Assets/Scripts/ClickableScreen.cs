@@ -9,10 +9,12 @@ public class ClickableScreen : MonoBehaviour
     // LE TUE AGGIUNTE: Spazi per l'audio e l'immagine
     public AudioSource ClickAudio;      
     public GameObject ImmagineSchermo;  
-
     private Renderer rend;
     private bool isOn = false;
+    
 
+    public DoorController puzzleManager; // per far aprire la porta con il puzze risolto
+    public int screenIndex;     // sequenza per puzzle1
     void Start()
     {
         rend = GetComponent<Renderer>();
@@ -44,7 +46,7 @@ public class ClickableScreen : MonoBehaviour
             ImmagineSchermo.SetActive(isOn);
         }
         
-        // Questo è il cambio colore originale della tua amica
+       
         if (isOn == true)
         {
             rend.material = ScreenGreen;
@@ -52,6 +54,14 @@ public class ClickableScreen : MonoBehaviour
         else
         {
             rend.material = ScreenRed;
+        }
+        
+        
+        if (puzzleManager != null)
+        {
+            // Aggiorna lo stato nel manager
+            puzzleManager.screenStates[screenIndex] = isOn;
+            puzzleManager.CheckDoor();
         }
     } 
 }
