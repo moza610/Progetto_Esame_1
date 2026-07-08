@@ -19,7 +19,7 @@ public class MouseClicker : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit))  //Funzionamento schermi per il Puzzle 1
             {
-                Debug.Log("Raycast ha colpito: " + hit.collider.gameObject.name); // debug per capire cosa colpisce il raggio
+                Debug.Log("Raycast ha colpito: " + hit.collider.gameObject.name);
 
                 ClickableScreen screen = hit.collider.GetComponent<ClickableScreen>();
                 if (screen != null)

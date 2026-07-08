@@ -16,11 +16,24 @@ public class ScreenMediaController : MonoBehaviour
     public void ToggleMedia()
     {
         isOn = !isOn;
+        Debug.Log("Stato dello schermo cambiato. Nuovo stato: " + (isOn ? "ACCESO" : "SPENTO"));
 
         if (clickAudio != null)
+        {
             clickAudio.Play();
+        }
+        else
+        {
+            Debug.LogWarning("ATTENZIONE: La casella clickAudio è VUOTA nell'Inspector!");
+        }
 
         if (memePlane != null)
+        {
             memePlane.SetActive(isOn);
+        }
+        else
+        {
+            Debug.LogWarning("ATTENZIONE: La casella memePlane è VUOTA nell'Inspector!");
+        }
     }
 }
