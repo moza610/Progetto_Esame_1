@@ -56246,7 +56246,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ScreenRed: {fileID: 2100000, guid: c530e6e286bf9434ebf90d60b6bf986d, type: 2}
-  ScreenGreen: {fileID: 2100000, guid: 86b49d4737f61a846aa9587ad27bc688, type: 2}
+  ScreenGreen: {fileID: 2100000, guid: ac6baedae23fbfb418bb3ff5fd26da57, type: 2}
   ClickAudio: {fileID: 0}
   ImmagineSchermo: {fileID: 0}
   puzzleManager: {fileID: 2070566502}
@@ -67064,7 +67064,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ScreenRed: {fileID: 2100000, guid: c530e6e286bf9434ebf90d60b6bf986d, type: 2}
-  ScreenGreen: {fileID: 2100000, guid: 86b49d4737f61a846aa9587ad27bc688, type: 2}
+  ScreenGreen: {fileID: 2100000, guid: ac6baedae23fbfb418bb3ff5fd26da57, type: 2}
   ClickAudio: {fileID: 0}
   ImmagineSchermo: {fileID: 0}
   puzzleManager: {fileID: 2070566502}
@@ -68322,7 +68322,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ScreenRed: {fileID: 2100000, guid: c530e6e286bf9434ebf90d60b6bf986d, type: 2}
-  ScreenGreen: {fileID: 2100000, guid: 86b49d4737f61a846aa9587ad27bc688, type: 2}
+  ScreenGreen: {fileID: 2100000, guid: ac6baedae23fbfb418bb3ff5fd26da57, type: 2}
   ClickAudio: {fileID: 0}
   ImmagineSchermo: {fileID: 0}
   puzzleManager: {fileID: 2070566502}
