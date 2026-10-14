@@ -44,10 +44,13 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+<<<<<<< Updated upstream:Assets/SLK/SciFiLevelKit/Materials/ScreenAnim_02.mat
     - _MainTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+=======
+>>>>>>> Stashed changes:Assets/Puzzles/Materials/WhatsApp Image 2026-07-07 at 12.57.41.mat
     - _SpecGlossMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
