@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 
 public class Timers : MonoBehaviour
 {
@@ -7,6 +8,13 @@ public class Timers : MonoBehaviour
     public Text TimerText;
     public Text GameOverText;
     public GameObject Player;
+    
+    [Header("Post Score Canvas")]
+    public GameObject PostScoreCanvas; 
+    public float delayBeforePostScore = 3f; 
+
+    [Header("Controllo Mouse / Gioco")]
+    public MouseClicker mouseClickerScript; // Trascina qui l'oggetto che ha lo script MouseClicker
 
     // Variabili che gestiscono il tempo e lo stato del gioco
     private float timeRemaining = 300f;
@@ -15,11 +23,8 @@ public class Timers : MonoBehaviour
 
     void Start()
     {
-        // Nasconde il testo del Game Over e mostra il tempo iniziale
-        if (GameOverText != null)
-        {
-            GameOverText.gameObject.SetActive(false);
-        }
+        if (GameOverText != null) GameOverText.gameObject.SetActive(false);
+        if (PostScoreCanvas != null) PostScoreCanvas.SetActive(false);
 
         if (TimerText != null)
         {
@@ -31,7 +36,6 @@ public class Timers : MonoBehaviour
 
     void Update()
     {
-        // Aggiorna il timer finché il gioco non è terminato e il timer non è in pausa
         if (isGameOver == false && isPaused == false)
         {
             timeRemaining = timeRemaining - Time.deltaTime;
@@ -50,7 +54,6 @@ public class Timers : MonoBehaviour
                 TimerText.text = minutes + ":" + seconds;
             }
 
-            // Quando il tempo finisce viene avviato il Game Over
             if (timeRemaining <= 0)
             {
                 TriggerGameOver();
@@ -58,21 +61,16 @@ public class Timers : MonoBehaviour
         }
     }
 
-    // Mette in pausa il timer
     public void PauseTimer()
     {
         isPaused = true;
-        Debug.Log("Timer FERMATO!");
     }
 
-    // Fa ripartire il timer
     public void ResumeTimer()
     {
         isPaused = false;
-        Debug.Log("Timer RIPARTITO!");
     }
 
-    // Gestisce tutto ciò che succede alla fine della partita
     void TriggerGameOver()
     {
         isGameOver = true;
@@ -88,6 +86,28 @@ public class Timers : MonoBehaviour
         if (Player != null)
         {
             Player.SetActive(false);
+        }
+
+        // 1. DISATTIVA LO SCRIPT DEL MOUSE (così non spara più raycast e libera il cursore)
+        if (mouseClickerScript != null)
+        {
+            mouseClickerScript.enabled = false;
+        }
+
+        // 2. Assicurati che il cursore del mouse sia visibile e sbloccato
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
+        StartCoroutine(ShowPostScoreRoutine());
+    }
+
+    IEnumerator ShowPostScoreRoutine()
+    {
+        yield return new WaitForSeconds(delayBeforePostScore);
+
+        if (PostScoreCanvas != null)
+        {
+            PostScoreCanvas.SetActive(true);
         }
     }
 }
