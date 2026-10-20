@@ -1,11 +1,9 @@
 using UnityEngine;
 
-public class NewMonoBehaviourScript : MonoBehaviour
+public class TriggerDoors : MonoBehaviour
 {
-  
     public Timers GameTimer; 
 
-   
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -13,9 +11,9 @@ public class NewMonoBehaviourScript : MonoBehaviour
             if (GameTimer != null)
             {
                 GameTimer.PauseTimer();
+            }
         }
     }
-}
 
     void OnTriggerExit(Collider other)
     {
@@ -27,5 +25,4 @@ public class NewMonoBehaviourScript : MonoBehaviour
             }
         }
     }
-
 }
